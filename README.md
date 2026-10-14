@@ -78,7 +78,7 @@ After deployment, set:
 VITE_CONTRACT_ADDRESS=0x...
 ```
 
-The frontend uses Studio Next chain ID `61997`, waits for finalized execution and consensus, then reads authoritative state back before showing success.
+The frontend uses GenLayer Studionet chain ID `61999`, waits for finalized execution and consensus, then reads authoritative state back before showing success.
 
 ## Reviewer quick path
 

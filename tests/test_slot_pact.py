@@ -26,7 +26,7 @@ class Comparative:
 def runtime(monkeypatch):
  g=types.ModuleType("genlayer");g.__all__=["gl","u256","TreeMap"]
  g.gl=g;g.u256=int;g.TreeMap=Map;g.Contract=object;g.vm=types.SimpleNamespace(UserError=ValueError);g.public=Public()
- g.message=types.SimpleNamespace(sender_address=A);g.message_raw={"datetime":"2026-10-14T00:16:40+00:00","chain_id":61997}
+ g.message=types.SimpleNamespace(sender_address=A);g.message_raw={"datetime":"2026-10-14T00:16:40+00:00","chain_id":61999}
  g.answer={"leg_a":"ALLOWED","leg_b":"ALLOWED"};g.nondet=types.SimpleNamespace(exec_prompt=lambda *a,**k:g.answer);g.eq_principle=Comparative(g)
  monkeypatch.setitem(sys.modules,"genlayer",g);spec=importlib.util.spec_from_file_location("slot_pact",ROOT/"contracts/slot_pact.py");m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);m.now=lambda:1000
  return m,m.SlotPact("slotpact-test-instance"),g
@@ -72,7 +72,7 @@ def test_only_counterparty_accepts_and_failure_has_no_mutation(runtime):
  m,c,g=runtime;setup(c,g);propose(c,g);g.message.sender_address=C;reject(c,lambda:c.accept_swap(1,c.get_swap(1)["swap_digest"]),"ONLY_COUNTERPARTY")
 
 def test_digest_tamper_and_stale_consent_blocked(runtime):
- m,c,g=runtime;setup(c,g);propose(c,g);g.message.sender_address=B;reject(c,lambda:c.accept_swap(1,"sha256:"+"0"*64),"DIGEST_MISMATCH")
+ m,c,g=runtime;setup(c,g);propose(c,g);assert c.get_swap(1)["chain_id"]==61999;g.message.sender_address=B;reject(c,lambda:c.accept_swap(1,"sha256:"+"0"*64),"DIGEST_MISMATCH")
  accept(c,g);g.message.sender_address=C;reject(c,lambda:c.assess_swap(1,"sha256:"+"f"*64),"DIGEST_MISMATCH")
 
 def test_policy_revision_never_migrates_bound_lot_or_swap(runtime):
