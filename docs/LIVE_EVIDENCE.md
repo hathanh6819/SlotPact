@@ -39,6 +39,16 @@ Complete filtered transaction metadata, exact calldata, policy snapshots and fin
 
 This packet demonstrates SDK execution. Wrong-wallet, wrong-digest, replay, expiry and injection cases still require live evidence; their direct local tests do not substitute for that evidence. Frontend production hosting and browser wallet signing remain unverified.
 
+## Additional live adversarial audit
+
+Progress is checkpointed in [live-audit.json](live-audit.json). Eleven cases are verified so far: settlement replay, wrong-owner booking, booking replay, unauthorized policy revision, unauthorized issuance, unauthorized slot publication, creation of an audit pact, wrong-wallet acceptance, wrong-digest acceptance, excess reservation and premature expiry. Each rejected case has explicit finalized consensus, the expected leader rollback payload, and equality of complete decoded state snapshots before/after.
+
+The audit then encountered `Rate limit exceeded: 500 requests per hour`. The transaction for `cancel_wrong_wallet` was already submitted at `0x51ea349745366d5e709041796ec6d073d41b384419a4fc7150ce4507c6ef4331`; its complete post-state verification is pending. No later case is claimed. Resume `scripts/run_live_audit.mjs` from the saved hashes after the RPC quota resets.
+
+Pending: wrong-wallet cancellation readback, valid cancellation/replay, prompt injection assessment, acceptance replay, wrong assessment digest, matched cancellation rejection, expired acceptance, expiry release/replay. Forced public-validator disagreement is outside the control of the two wallets and remains a local consensus-boundary test.
+
+See [BROWSER_VERIFICATION.md](BROWSER_VERIFICATION.md) for production-build UI readback. It matches the three live semantic outcomes and booking. Browser signing remains blocked by absence of an injected wallet in the available browser.
+
 `genlayer-js` 1.1.8 `waitForTransactionReceipt` returns the finalized GenLayer transaction on this RPC. Execution must be obtained separately from `getTransactionReceipt`; Ethereum receipt `status: success` is checked together with GenLayer `statusName: FINALIZED` and explicit `AGREE` or `MAJORITY_AGREE`. The frontend regression test rejects missing execution, missing consensus and ACCEPTED-only results.
 
 ## Superseded failed deployment
