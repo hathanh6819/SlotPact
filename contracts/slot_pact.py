@@ -26,7 +26,7 @@ class SlotPact(gl.Contract):
     swap_count:u256
     booking_count:u256
     programs:TreeMap[u256,str]
-    policies:TreeMap[str,str]
+    policies:TreeMap[u256,str]
     lots:TreeMap[u256,str]
     slots:TreeMap[u256,str]
     swaps:TreeMap[u256,str]
@@ -35,7 +35,7 @@ class SlotPact(gl.Contract):
     def __init__(self,instance_domain:str):
         domain=clean(instance_domain,80);require(len(domain)>=8,"INVALID_INSTANCE_DOMAIN")
         self.instance_domain=domain;self.program_count=u256(0);self.lot_count=u256(0);self.slot_count=u256(0);self.swap_count=u256(0);self.booking_count=u256(0)
-        self.programs=TreeMap[u256,str]();self.policies=TreeMap[str,str]();self.lots=TreeMap[u256,str]();self.slots=TreeMap[u256,str]();self.swaps=TreeMap[u256,str]();self.bookings=TreeMap[u256,str]()
+        self.programs=TreeMap[u256,str]();self.policies=TreeMap[u256,str]();self.lots=TreeMap[u256,str]();self.slots=TreeMap[u256,str]();self.swaps=TreeMap[u256,str]();self.bookings=TreeMap[u256,str]()
 
     def _load(self,table,key,count):
         if int(key)<1 or int(key)>int(count):return None
@@ -45,7 +45,8 @@ class SlotPact(gl.Contract):
     def _slot(self,sid):return self._load(self.slots,sid,self.slot_count)
     def _swap(self,sid):return self._load(self.swaps,sid,self.swap_count)
     def _save(self,table,obj):table[u256(obj["id"])]=canon(obj)
-    def _policy_key(self,pid,version):return str(int(pid))+":"+str(int(version))
+    def _policy_key(self,pid,version):
+        p=int(pid);v=int(version);require(1<=p<2**128 and 1<=v<2**64,"INVALID_POLICY_KEY");return u256((p<<64)|v)
     def _policy(self,pid,version):
         try:return json.loads(self.policies[self._policy_key(pid,version)])
         except Exception:return None

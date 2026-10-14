@@ -115,3 +115,4 @@ def test_header_no_web_fetch_and_digest_recomputed():
  src=(ROOT/"contracts/slot_pact.py").read_text(encoding="utf-8");assert src.splitlines()[:2]==['# v0.2.16','# { "Depends": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6" }']
  assert "web.get" not in src and "http://" not in src and "https://" not in src
  assert 'expected_digest==s["swap_digest"]==self._swap_digest(s)' in src
+ assert "policies:TreeMap[u256,str]" in src and "TreeMap[str,str]" not in src
