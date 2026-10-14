@@ -72,13 +72,15 @@ npm run build
 
 Deploy `contracts/slot_pact.py` with a unique constructor value such as `slotpact-studio-2026-10-14-a`. The string is part of every pact digest and prevents cross-instance commitment reuse.
 
+Verified Studionet deployment: [`0x64F95408268469E46e79526E39e069Ee95BCebad`](https://explorer-studio.genlayer.com/address/0x64F95408268469E46e79526E39e069Ee95BCebad).
+
 After deployment, set:
 
 ```text
 VITE_CONTRACT_ADDRESS=0x...
 ```
 
-The frontend uses GenLayer Studionet chain ID `61999`, waits for finalized execution and consensus, then reads authoritative state back before showing success.
+The frontend uses the official `studionet` descriptor from `genlayer-js` 1.1.8 (chain ID `61999`, RPC `https://studio.genlayer.com/api`), waits for finalized execution and consensus, then reads authoritative state back before showing success.
 
 ## Reviewer quick path
 
