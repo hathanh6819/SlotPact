@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "authority_model": "synthetic_on_chain_policy_snapshots",
+  "purpose": "Reproducible local inputs for the bounded two-leg semantic decision. These files are not external-world evidence and do not prove service delivery.",
+  "resources": [
+    {"path":"tests/fixtures/allowed.json","sha256":"63ce9ce44bb209cfc89631401695ca040f8ae2af54e8d41c2da4c6e54ac34e8f","publisher":"repository test author","subject":"synthetic validator branch","version":"fixture-v1","claim_scope":"deterministic test input only"},
+    {"path":"tests/fixtures/forbidden.json","sha256":"f79d27bf51b05861accd342f64ef81a9f9d23704d413c872f7160b77da419efe","publisher":"repository test author","subject":"synthetic validator branch","version":"fixture-v1","claim_scope":"deterministic test input only"},
+    {"path":"tests/fixtures/uncertain.json","sha256":"31b80df14dab9e89f058468ef5f4604bc13e9d9cb36ad1f5569713c2d838dcf1","publisher":"repository test author","subject":"synthetic validator branch","version":"fixture-v1","claim_scope":"deterministic test input only"}
+  ]
+}
