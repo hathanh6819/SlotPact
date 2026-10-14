@@ -1,0 +1,368 @@
+{
+  "contract": "0x64F95408268469E46e79526E39e069Ee95BCebad",
+  "network": "studionet",
+  "chain_id": 61999,
+  "captured_at": "2026-10-14T03:17:20.029Z",
+  "transactions": [
+    {
+      "label": "create_program_a",
+      "hash": "0xab8546f532d8ea85bc7abb602ee19356d77ba65e2fa0308f1ed44cc224a3591c",
+      "sender": "0x1D283b45974B0be9630DFD1deC6A62a9B72B2760",
+      "recipient": "0x64F95408268469E46e79526E39e069Ee95BCebad",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "success",
+      "calldata": "{\"args\":[\"Architecture clinic\",\"A scheduled architecture consultation for open-source DAO infrastructure delivered by wallet A.\",\"Credits permit internal architecture advisory sessions for open-source DAO infrastructure. Security audits, financial advice, resale outside the team, exploit development, and unlawful activity are forbidden.\",5,]\"method\":\"create_program\"}"
+    },
+    {
+      "label": "create_program_b",
+      "hash": "0xede859302f407fbd2b2e20b1c49400ef29578abff1757777dcf3a4f7aa076bdd",
+      "sender": "0xf96Cf822F9f4e76956AB9fAAa22B3BdCD7b10aD6",
+      "recipient": "0x64F95408268469E46e79526E39e069Ee95BCebad",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "success",
+      "calldata": "{\"args\":[\"Code review clinic\",\"A scheduled maintainability and code-quality review for public open-source software delivered by wallet B.\",\"Credits permit maintainability review and code-quality feedback for public open-source libraries. Closed proprietary code, formal security audits, exploit development, financial advice, and unlawful activity are forbidden.\",5,]\"method\":\"create_program\"}"
+    },
+    {
+      "label": "create_slot_b",
+      "hash": "0xa12d9653a41375f8dd65817a91cc54991a58263791c8cc1fb694e834932db1af",
+      "sender": "0xf96Cf822F9f4e76956AB9fAAa22B3BdCD7b10aD6",
+      "recipient": "0x64F95408268469E46e79526E39e069Ee95BCebad",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "success",
+      "calldata": "{\"args\":[2,1,\"Open-source maintainability review\",1791954599,1791958199,]\"method\":\"add_slot\"}"
+    },
+    {
+      "label": "happy_propose",
+      "hash": "0x170d8a9ae3295c31c751e48518432c1415936706ff60d789c37ccd892829fe5c",
+      "sender": "0x1D283b45974B0be9630DFD1deC6A62a9B72B2760",
+      "recipient": "0x64F95408268469E46e79526E39e069Ee95BCebad",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "success",
+      "calldata": "{\"args\":[1,2,2,1,\"0xf96Cf822F9f4e76956AB9fAAa22B3BdCD7b10aD6\",\"Internal architecture advisory for wallet B open-source DAO governance module.\",\"Maintainability review for wallet A public open-source TypeScript library.\",1001,1791950999,]\"method\":\"propose_swap\"}"
+    },
+    {
+      "label": "happy_accept",
+      "hash": "0x3286443e025ad9bd66a62579e2c309114ac5e7e35a4ef84f37c232da6042462f",
+      "sender": "0xf96Cf822F9f4e76956AB9fAAa22B3BdCD7b10aD6",
+      "recipient": "0x64F95408268469E46e79526E39e069Ee95BCebad",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "success",
+      "calldata": "{\"args\":[1,\"sha256:3e7c0036838cfb535f8c77ff0e562e4ab0ef55d68b74e6673f0b6a5b693c34d6\",]\"method\":\"accept_swap\"}"
+    },
+    {
+      "label": "happy_assess",
+      "hash": "0x413003334e246f2f6bc9c72654f326f853132a7cf8896585ede6e8c0a5743517",
+      "sender": "0x1D283b45974B0be9630DFD1deC6A62a9B72B2760",
+      "recipient": "0x64F95408268469E46e79526E39e069Ee95BCebad",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "success",
+      "calldata": "{\"args\":[1,\"sha256:3e7c0036838cfb535f8c77ff0e562e4ab0ef55d68b74e6673f0b6a5b693c34d6\",]\"method\":\"assess_swap\"}"
+    },
+    {
+      "label": "happy_book",
+      "hash": "0x63a6eb9e18d395f6e646711c9cdf3fa8e41b95dcad74c9baf5033027ea1c561c",
+      "sender": "0x1D283b45974B0be9630DFD1deC6A62a9B72B2760",
+      "recipient": "0x64F95408268469E46e79526E39e069Ee95BCebad",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "success",
+      "calldata": "{\"args\":[4,1,]\"method\":\"book_slot\"}"
+    },
+    {
+      "label": "forbidden_propose",
+      "hash": "0x00dfefdda7d6bc3048d151e9abff215dac95e03e6037dacfb075a39c65268643",
+      "sender": "0x1D283b45974B0be9630DFD1deC6A62a9B72B2760",
+      "recipient": "0x64F95408268469E46e79526E39e069Ee95BCebad",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "success",
+      "calldata": "{\"args\":[1,1,2,1,\"0xf96Cf822F9f4e76956AB9fAAa22B3BdCD7b10aD6\",\"Internal architecture advisory for wallet B open-source DAO voting module.\",\"Formal security audit and exploit development for wallet A closed proprietary product.\",1002,1791950999,]\"method\":\"propose_swap\"}"
+    },
+    {
+      "label": "forbidden_accept",
+      "hash": "0x12d0150161757ef1acf2e281ff57c9cffbfe52498415138be2177f4590c133fb",
+      "sender": "0xf96Cf822F9f4e76956AB9fAAa22B3BdCD7b10aD6",
+      "recipient": "0x64F95408268469E46e79526E39e069Ee95BCebad",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "success",
+      "calldata": "{\"args\":[2,\"sha256:97ebe43367d93407867db9656bc7b231db1340c41e88bde10b5af5ce6ce1cf6d\",]\"method\":\"accept_swap\"}"
+    },
+    {
+      "label": "forbidden_assess",
+      "hash": "0xef1fb518697ed4a2e388646459d6395cc39a35ff63d020268e1224c3ceedab44",
+      "sender": "0xf96Cf822F9f4e76956AB9fAAa22B3BdCD7b10aD6",
+      "recipient": "0x64F95408268469E46e79526E39e069Ee95BCebad",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "success",
+      "calldata": "{\"args\":[2,\"sha256:97ebe43367d93407867db9656bc7b231db1340c41e88bde10b5af5ce6ce1cf6d\",]\"method\":\"assess_swap\"}"
+    },
+    {
+      "label": "ambiguous_propose",
+      "hash": "0x0c9129beb7102b2f4d29032be3527b066870afdff9f5d1cbe086b534f2f50be4",
+      "sender": "0x1D283b45974B0be9630DFD1deC6A62a9B72B2760",
+      "recipient": "0x64F95408268469E46e79526E39e069Ee95BCebad",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "success",
+      "calldata": "{\"args\":[1,1,2,1,\"0xf96Cf822F9f4e76956AB9fAAa22B3BdCD7b10aD6\",\"Professional assistance for an unspecified future project whose details will be decided later.\",\"Maintainability review for wallet A public open-source documentation tool.\",1003,1791950999,]\"method\":\"propose_swap\"}"
+    },
+    {
+      "label": "ambiguous_accept",
+      "hash": "0xc8728b3ddc64124dd7fe63f3292f65c51a48d513a77e1b7e04b641f5aa758b1a",
+      "sender": "0xf96Cf822F9f4e76956AB9fAAa22B3BdCD7b10aD6",
+      "recipient": "0x64F95408268469E46e79526E39e069Ee95BCebad",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "success",
+      "calldata": "{\"args\":[3,\"sha256:180601409e25f3042a5a33fff7cd84df2bbc5f824357afa6bd1b1444578cea84\",]\"method\":\"accept_swap\"}"
+    },
+    {
+      "label": "ambiguous_assess",
+      "hash": "0xfbb9f77162dfb46ea986375b197bf9be9d3dd04ffe50ecf9a86ea4001cd2fc07",
+      "sender": "0x1D283b45974B0be9630DFD1deC6A62a9B72B2760",
+      "method": "assess_swap",
+      "args": [
+        3,
+        "sha256:180601409e25f3042a5a33fff7cd84df2bbc5f824357afa6bd1b1444578cea84"
+      ],
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "success"
+    }
+  ],
+  "state": {
+    "protocol": {
+      "architecture": "versioned-credit-lots-bilateral-reservation-semantic-two-leg-gate-atomic-booking",
+      "custody": false,
+      "deployer_privileges": false,
+      "external_sources": false,
+      "instance_domain": "slotpact-studio-2026-10-14-a",
+      "name": "SlotPact",
+      "version": 1
+    },
+    "counts": {
+      "bookings": 1,
+      "lots": 4,
+      "programs": 2,
+      "slots": 1,
+      "swaps": 3
+    },
+    "programs": [
+      {
+        "created_at": 1791946931,
+        "current_version": 1,
+        "id": 1,
+        "name": "Architecture clinic",
+        "provider": "0x1d283b45974b0be9630dfd1dec6a62a9b72b2760",
+        "total_supply": 5
+      },
+      {
+        "created_at": 1791947290,
+        "current_version": 1,
+        "id": 2,
+        "name": "Code review clinic",
+        "provider": "0xf96cf822f9f4e76956ab9faaa22b3bdcd7b10ad6",
+        "total_supply": 5
+      }
+    ],
+    "lots": [
+      {
+        "available": 3,
+        "created_at": 1791946931,
+        "id": 1,
+        "origin": "PROGRAM_GENESIS",
+        "owner": "0x1d283b45974b0be9630dfd1dec6a62a9b72b2760",
+        "policy_version": 1,
+        "program_id": 1,
+        "reserved": 0,
+        "use_commitment": "ISSUER_INVENTORY"
+      },
+      {
+        "available": 4,
+        "created_at": 1791947290,
+        "id": 2,
+        "origin": "PROGRAM_GENESIS",
+        "owner": "0xf96cf822f9f4e76956ab9faaa22b3bdcd7b10ad6",
+        "policy_version": 1,
+        "program_id": 2,
+        "reserved": 0,
+        "use_commitment": "ISSUER_INVENTORY"
+      },
+      {
+        "available": 2,
+        "created_at": 1791947524,
+        "id": 3,
+        "origin": "SWAP:1",
+        "owner": "0xf96cf822f9f4e76956ab9faaa22b3bdcd7b10ad6",
+        "policy_version": 1,
+        "program_id": 1,
+        "reserved": 0,
+        "use_commitment": "sha256:ca0fe9839ec07c804d5ff3bdb8e23a6e0e0afa773d2de4453bbe0c5e677f0f62"
+      },
+      {
+        "available": 0,
+        "created_at": 1791947524,
+        "id": 4,
+        "origin": "SWAP:1",
+        "owner": "0x1d283b45974b0be9630dfd1dec6a62a9b72b2760",
+        "policy_version": 1,
+        "program_id": 2,
+        "reserved": 0,
+        "use_commitment": "sha256:24fc3ca11faa196a5372e8915685edd99f1115f9ce504f2e866603c31936635e"
+      }
+    ],
+    "swaps": [
+      {
+        "a_amount": 2,
+        "a_intended_use": "Internal architecture advisory for wallet B open-source DAO governance module.",
+        "a_lot_id": 1,
+        "a_policy_digest": "sha256:70ec92fbd0c34d6496d37b9ae6d2f548cb08975a7dcde1845fc4710d8cf4f2ad",
+        "a_policy_version": 1,
+        "a_program_id": 1,
+        "accepted_at": 1791947483,
+        "b_amount": 1,
+        "b_intended_use": "Maintainability review for wallet A public open-source TypeScript library.",
+        "b_lot_id": 2,
+        "b_policy_digest": "sha256:9fd37dc9ce3bcda346a75b49662a9e17df715639dba0aa3ca15c4b59ac9f111d",
+        "b_policy_version": 1,
+        "b_program_id": 2,
+        "b_reserved": true,
+        "chain_id": 61999,
+        "counterparty": "0xf96cf822f9f4e76956ab9faaa22b3bdcd7b10ad6",
+        "created_at": 1791947443,
+        "expires_at": 1791950999,
+        "id": 1,
+        "nonce": 1001,
+        "proposer": "0x1d283b45974b0be9630dfd1dec6a62a9b72b2760",
+        "received_a_lot_id": 4,
+        "received_b_lot_id": 3,
+        "result_a": "ALLOWED",
+        "result_b": "ALLOWED",
+        "settled_at": 1791947524,
+        "status": "SETTLED",
+        "swap_digest": "sha256:3e7c0036838cfb535f8c77ff0e562e4ab0ef55d68b74e6673f0b6a5b693c34d6"
+      },
+      {
+        "a_amount": 1,
+        "a_intended_use": "Internal architecture advisory for wallet B open-source DAO voting module.",
+        "a_lot_id": 1,
+        "a_policy_digest": "sha256:70ec92fbd0c34d6496d37b9ae6d2f548cb08975a7dcde1845fc4710d8cf4f2ad",
+        "a_policy_version": 1,
+        "a_program_id": 1,
+        "accepted_at": 1791947664,
+        "b_amount": 1,
+        "b_intended_use": "Formal security audit and exploit development for wallet A closed proprietary product.",
+        "b_lot_id": 2,
+        "b_policy_digest": "sha256:9fd37dc9ce3bcda346a75b49662a9e17df715639dba0aa3ca15c4b59ac9f111d",
+        "b_policy_version": 1,
+        "b_program_id": 2,
+        "b_reserved": true,
+        "chain_id": 61999,
+        "counterparty": "0xf96cf822f9f4e76956ab9faaa22b3bdcd7b10ad6",
+        "created_at": 1791947625,
+        "expires_at": 1791950999,
+        "id": 2,
+        "nonce": 1002,
+        "proposer": "0x1d283b45974b0be9630dfd1dec6a62a9b72b2760",
+        "received_a_lot_id": 0,
+        "received_b_lot_id": 0,
+        "result_a": "ALLOWED",
+        "result_b": "FORBIDDEN",
+        "settled_at": 0,
+        "status": "BLOCKED",
+        "swap_digest": "sha256:97ebe43367d93407867db9656bc7b231db1340c41e88bde10b5af5ce6ce1cf6d"
+      },
+      {
+        "a_amount": 1,
+        "a_intended_use": "Professional assistance for an unspecified future project whose details will be decided later.",
+        "a_lot_id": 1,
+        "a_policy_digest": "sha256:70ec92fbd0c34d6496d37b9ae6d2f548cb08975a7dcde1845fc4710d8cf4f2ad",
+        "a_policy_version": 1,
+        "a_program_id": 1,
+        "accepted_at": 1791947813,
+        "b_amount": 1,
+        "b_intended_use": "Maintainability review for wallet A public open-source documentation tool.",
+        "b_lot_id": 2,
+        "b_policy_digest": "sha256:9fd37dc9ce3bcda346a75b49662a9e17df715639dba0aa3ca15c4b59ac9f111d",
+        "b_policy_version": 1,
+        "b_program_id": 2,
+        "b_reserved": true,
+        "chain_id": 61999,
+        "counterparty": "0xf96cf822f9f4e76956ab9faaa22b3bdcd7b10ad6",
+        "created_at": 1791947774,
+        "expires_at": 1791950999,
+        "id": 3,
+        "nonce": 1003,
+        "proposer": "0x1d283b45974b0be9630dfd1dec6a62a9b72b2760",
+        "received_a_lot_id": 0,
+        "received_b_lot_id": 0,
+        "result_a": "UNCERTAIN",
+        "result_b": "ALLOWED",
+        "settled_at": 0,
+        "status": "UNRESOLVED",
+        "swap_digest": "sha256:180601409e25f3042a5a33fff7cd84df2bbc5f824357afa6bd1b1444578cea84"
+      }
+    ],
+    "slots": [
+      {
+        "booking_id": 1,
+        "created_at": 1791947403,
+        "end_at": 1791958199,
+        "id": 1,
+        "label": "Open-source maintainability review",
+        "policy_version": 1,
+        "program_id": 2,
+        "provider": "0xf96cf822f9f4e76956ab9faaa22b3bdcd7b10ad6",
+        "start_at": 1791954599,
+        "status": "BOOKED"
+      }
+    ],
+    "bookings": [
+      {
+        "created_at": 1791947584,
+        "customer": "0x1d283b45974b0be9630dfd1dec6a62a9b72b2760",
+        "id": 1,
+        "lot_id": 4,
+        "policy_version": 1,
+        "program_id": 2,
+        "provider": "0xf96cf822f9f4e76956ab9faaa22b3bdcd7b10ad6",
+        "slot_id": 1,
+        "status": "CONFIRMED",
+        "use_commitment": "sha256:24fc3ca11faa196a5372e8915685edd99f1115f9ce504f2e866603c31936635e"
+      }
+    ],
+    "policies": [
+      {
+        "created_at": 1791946931,
+        "name": "Architecture clinic",
+        "policy_digest": "sha256:70ec92fbd0c34d6496d37b9ae6d2f548cb08975a7dcde1845fc4710d8cf4f2ad",
+        "policy_text": "Credits permit internal architecture advisory sessions for open-source DAO infrastructure. Security audits, financial advice, resale outside the team, exploit development, and unlawful activity are forbidden.",
+        "program_id": 1,
+        "provider": "0x1d283b45974b0be9630dfd1dec6a62a9b72b2760",
+        "service_description": "A scheduled architecture consultation for open-source DAO infrastructure delivered by wallet A.",
+        "version": 1
+      },
+      {
+        "created_at": 1791947290,
+        "name": "Code review clinic",
+        "policy_digest": "sha256:9fd37dc9ce3bcda346a75b49662a9e17df715639dba0aa3ca15c4b59ac9f111d",
+        "policy_text": "Credits permit maintainability review and code-quality feedback for public open-source libraries. Closed proprietary code, formal security audits, exploit development, financial advice, and unlawful activity are forbidden.",
+        "program_id": 2,
+        "provider": "0xf96cf822f9f4e76956ab9faaa22b3bdcd7b10ad6",
+        "service_description": "A scheduled maintainability and code-quality review for public open-source software delivered by wallet B.",
+        "version": 1
+      }
+    ]
+  },
+  "result": "SDK_HAPPY_FORBIDDEN_AMBIGUOUS_PASS",
+  "source_sha256": "c70a65b05fb54bd8fbed0e1f96cd376e6a84a47f92084475f9f2c0ce9dba1ebc",
+  "completed_at": "2026-10-14T03:19:16.282Z"
+}
