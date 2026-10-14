@@ -1,6 +1,6 @@
 # Live evidence
 
-Status: **SDK happy, forbidden and uncertain lifecycles verified; full adversarial live matrix and production browser journey pending**.
+Status: **SDK lifecycle and 24-case adversarial live matrix verified on Studionet; production hosting pending**.
 
 This file is a release gate, not a placeholder claim. Add evidence only after the exact committed source is deployed and exercised by two non-deployer wallets.
 
@@ -21,7 +21,7 @@ The deployed source returned by `gen_getContractCode` is 16,096 bytes and hashes
 
 ## Transactions and readbacks
 
-Live lifecycle is in progress. Verified operations:
+Verified operations:
 
 | Operation | Explorer transaction | Observed |
 |---|---|---|
@@ -37,17 +37,17 @@ Live lifecycle is in progress. Verified operations:
 
 Complete filtered transaction metadata, exact calldata, policy snapshots and finalized readbacks are in [live-e2e.json](live-e2e.json). All 13 recorded transactions finalized with successful execution and MAJORITY_AGREE. Final counts: 2 programs, 4 lots, 1 slot, 3 swaps, 1 booking. Final available plus reserved credits are 5 for program A and 4 for program B; program B's remaining unit is consumed by booking 1. Original lots 1 and 2 have no reserved units.
 
-This packet demonstrates SDK execution. Wrong-wallet, wrong-digest, replay, expiry and injection cases still require live evidence; their direct local tests do not substitute for that evidence. Frontend production hosting and browser wallet signing remain unverified.
+This packet demonstrates transactions signed by two independent non-deployer wallets through `genlayer-js`. Browser-wallet signing is not part of the evidence claim. Frontend production hosting remains pending.
 
 ## Additional live adversarial audit
 
-Progress is checkpointed in [live-audit.json](live-audit.json). Eleven cases are verified so far: settlement replay, wrong-owner booking, booking replay, unauthorized policy revision, unauthorized issuance, unauthorized slot publication, creation of an audit pact, wrong-wallet acceptance, wrong-digest acceptance, excess reservation and premature expiry. Each rejected case has explicit finalized consensus, the expected leader rollback payload, and equality of complete decoded state snapshots before/after.
+The complete checkpointed packet is [live-audit.json](live-audit.json): **24/24 cases verified, result `PASS`**. Every transaction reached `FINALIZED` with `MAJORITY_AGREE`. Every rejected call records the expected leader rollback payload and an identical complete decoded state snapshot before/after.
 
-The audit then encountered `Rate limit exceeded: 500 requests per hour`. The transaction for `cancel_wrong_wallet` was already submitted at `0x51ea349745366d5e709041796ec6d073d41b384419a4fc7150ce4507c6ef4331`; its complete post-state verification is pending. No later case is claimed. Resume `scripts/run_live_audit.mjs` from the saved hashes after the RPC quota resets.
+Coverage includes provider-only authorization, wrong lot owner, wrong counterparty, wrong proposer, digest mismatch, over-reservation, premature expiry, settlement/accept/cancel/expiry replay, cancellation of a matched pact, an expired acceptance, successful cancellation and expiry release. The prompt-injection sequence ([proposal](https://explorer-studio.genlayer.com/transactions/0x000a6734cb56d145d990c8a6ca88567b39159f752326797f1f36744d83d5a5ee), [acceptance](https://explorer-studio.genlayer.com/transactions/0xf8a2d28a8b31486dda894cc4930fb25c99de6cad123500a0d989c0c19edec8d3), [assessment](https://explorer-studio.genlayer.com/transactions/0xc91d12db07171a63d2c86e4a14c1fe539160c2e09eea3f6ad5141bbe1d8b2162)) could not force `ALLOWED`: the two-leg result was `FORBIDDEN / ALLOWED`, the pact finished `BLOCKED`, and both reservations were released. The expiry sequence rejected late acceptance with `SWAP_EXPIRED`, then [released the reservation](https://explorer-studio.genlayer.com/transactions/0x9d5111f0cb853316e1d67925097397470d1f4036cdeb6da55c7a0e1b84bc3ab2) and rejected replay with `WRONG_PHASE`.
 
-Pending: wrong-wallet cancellation readback, valid cancellation/replay, prompt injection assessment, acceptance replay, wrong assessment digest, matched cancellation rejection, expired acceptance, expiry release/replay. Forced public-validator disagreement is outside the control of the two wallets and remains a local consensus-boundary test.
+`python scripts/verify_live_evidence.py` independently reports `Evidence integrity PASS; verified live audit cases: 24`. Forced public-validator disagreement cannot be induced by the two test wallets and remains covered only by the local consensus-boundary test.
 
-See [BROWSER_VERIFICATION.md](BROWSER_VERIFICATION.md) for production-build UI readback. It matches the three live semantic outcomes and booking. Browser signing remains blocked by absence of an injected wallet in the available browser.
+See [BROWSER_VERIFICATION.md](BROWSER_VERIFICATION.md) for production-build UI readback. It matches the three primary live semantic outcomes and booking. Live transaction evidence was signed through the SDK, as stated above.
 
 `genlayer-js` 1.1.8 `waitForTransactionReceipt` returns the finalized GenLayer transaction on this RPC. Execution must be obtained separately from `getTransactionReceipt`; Ethereum receipt `status: success` is checked together with GenLayer `statusName: FINALIZED` and explicit `AGREE` or `MAJORITY_AGREE`. The frontend regression test rejects missing execution, missing consensus and ACCEPTED-only results.
 
