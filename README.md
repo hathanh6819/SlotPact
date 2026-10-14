@@ -92,4 +92,4 @@ The frontend uses the official `studionet` descriptor from `genlayer-js` 1.1.8 (
 6. With compatible policies, wallet A books wallet B's matching slot using its new settled lot.
 7. Repeat with a prohibited use and confirm both original lots are fully released.
 
-Deployment links and exact transaction/readback records are intentionally not fabricated; they are added to `docs/LIVE_EVIDENCE.md` after the matching source is deployed.
+Live frontend: [https://slotpact.pages.dev](https://slotpact.pages.dev). Exact deployment, transaction, calldata and finalized readback records are maintained in [`docs/LIVE_EVIDENCE.md`](docs/LIVE_EVIDENCE.md) and the machine-verifiable JSON evidence files.

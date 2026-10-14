@@ -11,7 +11,7 @@ This file is a release gate, not a placeholder claim. Add evidence only after th
 - Studionet contract: [`0x64F95408268469E46e79526E39e069Ee95BCebad`](https://explorer-studio.genlayer.com/address/0x64F95408268469E46e79526E39e069Ee95BCebad)
 - Network: GenLayer Studionet, chain ID `61999`, RPC `https://studio.genlayer.com/api`
 - Constructor instance domain: `slotpact-studio-2026-10-14-a`
-- Frontend deployment: pending
+- Frontend deployment: [https://slotpact.pages.dev](https://slotpact.pages.dev)
 
 The deployed source returned by `gen_getContractCode` is 16,096 bytes and hashes exactly to the local source SHA-256 above. Finalized initial readback:
 
