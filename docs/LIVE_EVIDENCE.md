@@ -21,7 +21,16 @@ The deployed source returned by `gen_getContractCode` is 16,096 bytes and hashes
 
 ## Transactions and readbacks
 
-No operational transaction has been claimed yet. Populate the happy, forbidden, uncertain, authorization, binding, replay, expiry and booking rows described in `TEST_AND_EVIDENCE.md` with explorer links and canonical JSON artifacts.
+Live lifecycle is in progress. Verified operations:
+
+| Operation | Explorer transaction | Observed |
+|---|---|---|
+| Provider A program | [transaction](https://explorer-studio.genlayer.com/transactions/0xab8546f532d8ea85bc7abb602ee19356d77ba65e2fa0308f1ed44cc224a3591c) | Finalized; MAJORITY_AGREE; program 1 belongs to wallet A |
+| Provider B program | [transaction](https://explorer-studio.genlayer.com/transactions/0xede859302f407fbd2b2e20b1c49400ef29578abff1757777dcf3a4f7aa076bdd) | Finalized; program 2 belongs to wallet B |
+| Provider B slot | [transaction](https://explorer-studio.genlayer.com/transactions/0xa12d9653a41375f8dd65817a91cc54991a58263791c8cc1fb694e834932db1af) | Finalized; SUCCESS; MAJORITY_AGREE |
+| Happy proposal | [transaction](https://explorer-studio.genlayer.com/transactions/0x170d8a9ae3295c31c751e48518432c1415936706ff60d789c37ccd892829fe5c) | Finalized; SUCCESS; MAJORITY_AGREE; A lot available 3 / reserved 2 |
+
+`genlayer-js` 1.1.8 `waitForTransactionReceipt` returns the finalized GenLayer transaction on this RPC. Execution must be obtained separately from `getTransactionReceipt`; Ethereum receipt `status: success` is checked together with GenLayer `statusName: FINALIZED` and explicit `AGREE` or `MAJORITY_AGREE`. The frontend regression test rejects missing execution, missing consensus and ACCEPTED-only results.
 
 ## Superseded failed deployment
 
